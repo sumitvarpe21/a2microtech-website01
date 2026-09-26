@@ -15,3 +15,5 @@ backend/media/
 
 .vscode/
 .idea/
+
+products_backup.json
