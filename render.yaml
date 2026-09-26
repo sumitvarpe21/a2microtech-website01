@@ -4,14 +4,31 @@ services:
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "cd backend && gunicorn config.wsgi:application"
+
     envVars:
       - key: PYTHON_VERSION
         value: 3.12
+
       - key: DEBUG
         value: "False"
+
       - key: DJANGO_SECRET_KEY
         generateValue: true
+
       - key: ALLOWED_HOSTS
         sync: false
+
       - key: CORS_ALLOWED_ORIGINS
+        sync: false
+
+      - key: DATABASE_URL
+        sync: false
+
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+
+      - key: CLOUDINARY_API_KEY
+        sync: false
+
+      - key: CLOUDINARY_API_SECRET
         sync: false
